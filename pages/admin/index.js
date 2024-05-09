@@ -61,7 +61,7 @@ const index = () => {
   return (
     <div>
       <DashTheme>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
           <Grid item xs={4}>
             <Box sx={{ boxShadow: "0px 0px 5px #ccc", padding: "20px", borderRadius: '5px' }}>
               <Typography variant='h5' sx={{ fontWeight: "bold", textAlign: 'center', marginBottom: "20px" }}>Total Category</Typography>

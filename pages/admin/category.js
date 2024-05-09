@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import DashTheme from './Component/DashTheme'
-import { Box, FormLabel, FormControl, FormGroup, FormControlLabel, FormHelperText, Switch, Grid, Button, Autocomplete, TextField, Dialog, DialogTitle, IconButton, DialogActions, DialogContent, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Box, FormControlLabel, Switch, Grid, Button, Autocomplete, TextField, Dialog, DialogTitle, IconButton, DialogActions, DialogContent, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Input } from '@mui/material'
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -45,6 +46,17 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 
+const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1,
+});
 
 
 
@@ -229,7 +241,9 @@ const category = () => {
                                             <CloseIcon />
                                         </IconButton>
                                         <DialogContent dividers>
-                                            <TextField id="catagoryName" name='catagoryName' type='text' label="Category" variant="outlined" onChange={formik.handleChange} value={formik.values.catagoryName} />
+                                            <Box sx={{ width: "100%", marginBottom: "15px" }}>
+                                                <TextField id="catagoryName" name='catagoryName' type='text' label="Category" variant="outlined" onChange={formik.handleChange} value={formik.values.catagoryName} />
+                                            </Box>
                                         </DialogContent>
                                         <DialogActions>
                                             <Button variant='contained' type='submit'>
