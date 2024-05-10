@@ -4,7 +4,7 @@ import { Box, Grid, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
-const index = () => {
+const Index = () => {
   let router = useRouter()
   let [categoryCount, setCategoryCount] = useState("")
   let [subCategoryCount, setSubCategoryCount] = useState("")
@@ -57,7 +57,7 @@ const index = () => {
     countCategoryAPiCall()
     countsubCategoryAPiCall()
     countquestionsAPiCall()
-  }, [])
+  }, [router])
   return (
     <div>
       <DashTheme>
@@ -89,4 +89,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

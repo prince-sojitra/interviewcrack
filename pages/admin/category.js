@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react';
 import DashTheme from './Component/DashTheme'
 import { Box, FormControlLabel, Switch, Grid, Button, Autocomplete, TextField, Dialog, DialogTitle, IconButton, DialogActions, DialogContent, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Input } from '@mui/material'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-
+import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 import { styled } from '@mui/material/styles';
+
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#1976d2',
@@ -33,9 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-import { useFormik } from 'formik';
-import { useRouter } from 'next/router';
-import axios from 'axios';
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),
@@ -60,13 +63,13 @@ const VisuallyHiddenInput = styled('input')({
 
 
 
-const category = () => {
+const Category = () => {
     let router = useRouter()
 
 
 
     const [allData, setAllData] = useState([])
-    const [opencategory, setOpencategory] = React.useState(false);
+    const [opencategory, setOpencategory] = useState(false);
     const [selectcategories, setselectcategories] = useState('');
     const [uid, setUid] = useState(null)
     const filterCategories = allData ? allData.filter((el) => selectcategories ? el.catagoryName === selectcategories : true) : [];
@@ -202,7 +205,7 @@ const category = () => {
         }
         allDataCallApi()
         allSubCategoryDataCallApi()
-    }, [])
+    }, [router])
     return (
         <DashTheme>
             <Box >
@@ -307,4 +310,4 @@ const category = () => {
     )
 }
 
-export default category
+export default Category

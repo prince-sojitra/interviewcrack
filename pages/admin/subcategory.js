@@ -46,14 +46,14 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 
 
-const subcategory = () => {
+const Subcategory = () => {
   let router = useRouter()
 
 
 
   const [allCategoryData, setAllCategoryData] = useState([])
   const [allSubCategoryData, setAllSubCategoryData] = useState([])
-  const [opencategory, setOpencategory] = React.useState(false);
+  const [opencategory, setOpencategory] = useState(false);
   const [selectcategories, setselectcategories] = useState('');
   const [uid, setUid] = useState(null)
   const filterCategories = allSubCategoryData ? allSubCategoryData.filter((el) => selectcategories ? el.subCatagoryname === selectcategories : true) : [];
@@ -172,7 +172,7 @@ const subcategory = () => {
     }
     allCategoryDataCallApi()
     allSubCategoryDataCallApi()
-  }, [])
+  }, [router])
   return (
     <DashTheme>
       <Box >
@@ -298,4 +298,4 @@ const subcategory = () => {
   )
 }
 
-export default subcategory
+export default Subcategory

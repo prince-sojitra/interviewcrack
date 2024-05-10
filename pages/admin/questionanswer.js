@@ -74,14 +74,14 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 
 
-const questionanswer = () => {
+const Questionanswer = () => {
   let router = useRouter()
 
 
 
   const [allQAData, setAllQAData] = useState([])
   const [allSubCategoryData, setAllSubCategoryData] = useState([])
-  const [opencategory, setOpencategory] = React.useState(false);
+  const [opencategory, setOpencategory] = useState(false);
   const [uid, setUid] = useState(null)
 
 
@@ -186,7 +186,7 @@ const questionanswer = () => {
     }
     allQADataCallApi()
     allSubCategoryDataCallApi()
-  }, [])
+  }, [router])
 
 
 
@@ -324,4 +324,4 @@ const questionanswer = () => {
   )
 }
 
-export default questionanswer 
+export default Questionanswer 
