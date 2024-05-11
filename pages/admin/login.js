@@ -18,7 +18,7 @@ const Login = () => {
     },
     onSubmit: async (values) => {
       try {
-        const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/admin/login`, values);
+        const res = await axios.post(`${process.env.BASE_URL}/admin/login`, values);
         localStorage.setItem('Admin_Token', res.data.token);
         router.push('/admin');
       } catch (error) {
