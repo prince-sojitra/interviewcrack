@@ -1,3 +1,4 @@
+import 'dotenv/config'
 /** @type {import('next').NextConfig} */
 // next.config.mjs
 const nextConfig = {
